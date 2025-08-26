@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/08/26 19:09:41 by hroxo            ###   ########.fr        #
+#    Updated: 2025/08/26 22:55:42 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,13 @@ NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
-SRC =  ft_atoi.c \
-       ft_strlen.c \
-       ft_isalpha.c \
-       ft_isdigit.c 
+SRC =	ft_isalpha.c \
+       	ft_isdigit.c \
+	ft_isalnum.c \
+	ft_isascii.c \
+	ft_isprint.c \
+	ft_strlen.c \
+	memset.c
 OBJ = $(SRC:.c=.o)
 
 SRCB = 
