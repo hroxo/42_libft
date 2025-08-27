@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/08/26 22:55:42 by hroxo            ###   ########.fr        #
+#    Updated: 2025/08/27 14:50:40 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC =	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isprint.c \
 	ft_strlen.c \
-	memset.c
+	memset.c \
+	ft_bzero.c
 OBJ = $(SRC:.c=.o)
 
 SRCB = 
