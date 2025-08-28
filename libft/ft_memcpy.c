@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t				i;
 	const unsigned char	*pstr;
 	unsigned char		*pdest;
-	
+
 	if (!dest)
 		return (NULL);
 	pstr = (const unsigned char *)src;
@@ -30,7 +30,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -42,4 +42,4 @@ int main()
 	printf("==>Funcao Original<==\n");
 	printf("%s\n", (char *)memcpy((void *)dest, (void *)src, 10));
 }
-
+*/
