@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 00:01:59 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 00:14:21 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/28 11:43:43 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,48 @@
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	unsigned char temp_buffer[n];
-	unsigned char	*p_dest;
-	unsigned char	*p_src;
 
-	p_dest = (unsigned char *)dest;
-	p_src = (unsigned char *)src;
+	if (!dest || !src)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	if (dest < src)
 	{
-		temp_buffer[i] = p_src[i];
-		p_dest[i] = temp_buffer[i];
-		i++;
+		while (i < n)
+		{
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			i++;
+		}
+	}
+	else
+	{
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		}
 	}
 	return (dest);
 }
+
+/*
+#include <string.h>
+#include <stdio.h>
+
+int main(void)
+{
+	char str[100] = "Learningisfun";
+	char *first, *second;
+
+	first = str;
+	second = str;
+	memmove(second + 8, first, 10);
+	printf("==>memmove original <==\n%s\n", str);
+	char str1[100] = "Learningisfun";
+	first = str1;
+	second = str1;
+	ft_memmove(second + 8, first, 10);
+	printf("==>memmove meu <==\n%s\n", str1);
+	return 0;
+}
+*/
