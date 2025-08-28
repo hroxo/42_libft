@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/27 23:58:09 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/28 19:55:41 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strchr(const char *s, int c);
 int		ft_toupper(int c);
