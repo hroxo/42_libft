@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/08/28 15:41:16 by hroxo            ###   ########.fr        #
+#    Updated: 2025/08/28 16:36:54 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,9 @@ SRC =	ft_isalpha.c \
 	ft_memmove.c \
 	ft_strlcat.c \
 	ft_tolower.c \
-
+	ft_toupper.c \
+	ft_strchr.c \
+	ft_strrchr.c
 OBJ = $(SRC:.c=.o)
 
 SRCB = 

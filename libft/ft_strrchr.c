@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:00:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 16:07:31 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/28 16:35:59 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*out;
+	int	i;
+	int	last_c;
 
-	out = NULL;
-	while(*s)
+	last_c = -1;
+	i = 0;
+	while (s[i])
 	{
-		if (*s == (char)c)
+		if (s[i] == (char)c)
 		{
-			*out = *s;
+			last_c = i;
 		}
-		s++;
+		i++;
 	}
-	return (out);
+	if (last_c < 0)
+		return (NULL);
+	else
+		return ((char *)&s[last_c]);
 }
 
+/*
 #include <stdio.h>
 #include <string.h>
 
@@ -35,9 +41,9 @@ int main()
 {
 	char word[40] = "Ola tudo bem?";
 	printf("==>O meu<==\n");
-	printf("output: %s\n\n", ft_strrchr(word, ' '));
+	printf("output: %s\n\n", ft_strrchr(word, '0'));
 	printf("==>O original<==\n");
-	printf("output: %s\n\n", strrchr(word, ' '));
+	printf("output: %s\n\n", strrchr(word, '0'));
 	return 0;
 }
-
+*/
