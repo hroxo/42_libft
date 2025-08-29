@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 19:55:41 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/29 11:32:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 
+char	*ft_strdup(const char *s);
+void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(const char *nptr);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);

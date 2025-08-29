@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/08/28 22:06:59 by hroxo            ###   ########.fr        #
+#    Updated: 2025/08/29 16:15:32 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,11 @@ SRC =	ft_isalpha.c \
 	ft_strncmp.c \
 	ft_memchr.c \
 	ft_strnstr.c \
-	ft_atoi.c
-	
+	ft_atoi.c \
+	ft_calloc.c \
+	ft_strdup.c \
+	ft_substr.c \
+	ft_strjoin.c
 OBJ = $(SRC:.c=.o)
 
 SRCB = 
