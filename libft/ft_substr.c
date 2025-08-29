@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	j = 0;
 	i = 0;
 	out = malloc(len + 1);
-	if (!out) 
+	if (!out)
 		return (NULL);
 	while (s[i])
 	{
@@ -46,7 +46,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 int main(int argc, char **argv)
 {
 	(void) argc;
-	printf("output string\n%s", ft_substr(argv[1], atoi(argv[2]), (size_t)atoi(argv[3])));
+	printf("output string\n%s",
+		ft_substr(argv[1], atoi(argv[2]), (size_t)atoi(argv[3])));
 	return (0);
 }
 */
