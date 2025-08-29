@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 19:42:08 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/29 19:49:36 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 
+char	*ft_itoa(int n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
