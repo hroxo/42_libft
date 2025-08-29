@@ -1,0 +1,106 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
+/*   Updated: 2025/08/29 18:57:58 by hroxo            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+#include <stdio.h> //TODO REMOVE ME
+
+static size_t	count_words(char const *s, char c)
+{
+	size_t	i;
+	size_t	score;
+	int	flag;
+
+	flag = 1;
+	i = 0;
+	score = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+		{
+			flag = 1;
+		}
+		else
+		{
+			if (flag)
+				score++;
+			flag = 0;
+		}
+		i++;
+	}
+	return	(score);
+}
+
+static char	*new_string(char *s, size_t *w, char c)
+{
+	size_t	j;
+	char	*str;
+	size_t	pw;
+
+	pw = *w;
+	j = 0;
+	while (s[pw + j] && s[pw + j] != c)
+		j++;
+	str = malloc(sizeof(char) * ((int)j + 1));
+	if (!str)
+		return (NULL);
+	j = 0;
+	while (s[pw] && s[pw] != c)
+		str[j++] = s[pw++];
+	while (s[pw] && s[pw] == c)
+		w++;
+	str[j] = 0;
+	*w = pw;
+	return (str);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**strs;
+	size_t	i;
+	size_t	w;
+
+	w = 0;
+	i = 0;
+	strs = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!strs)
+		return (NULL);
+	while (s[w])
+	{
+		printf("loop");
+		strs[i] = new_string((char *)&s[w], &w, c);
+		if (strs[i] == NULL)
+		{
+			free(strs);
+			return (NULL);
+		}
+		i++;
+	}
+	strs[i] = 0;
+	return (strs);
+}
+
+
+
+int main(int argc, char **argv)
+{
+	(void) argc;
+	char	**strs;
+
+	strs = ft_split(argv[1], argv[2][0]);
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%i string: %s\n\n", (i + 1), strs[i]);
+		free(strs[i]);
+	}
+	free(strs);
+}
+
