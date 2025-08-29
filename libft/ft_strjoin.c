@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:48:59 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 16:14:06 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/08/29 16:16:42 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str_joined);
 }
 
-
+/*
 #include <stdio.h>
 int	main(int argc, char **argv)
 {
@@ -46,3 +46,4 @@ int	main(int argc, char **argv)
 	printf("output: %s\n", ft_strjoin(argv[1], argv[2]));
 	return 0;
 }
+*/
