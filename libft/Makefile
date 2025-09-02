@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/01 23:32:38 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/02 15:16:35 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,9 @@ SRC =	ft_isalpha.c \
 	ft_putnbr_fd.c
 OBJ = $(SRC:.c=.o)
 
-SRCB = 
+SRCB =	ft_lstnew_bonus.c \
+	ft_lstadd_front_bonus.c \
+	ft_lstlast_bonus.c
 OBJB = $(SRCB:.c=.o)
 
 RM = rm -rf
@@ -64,7 +66,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ) 
 
 clean: 
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(OBJB)
 
 fclean: clean
 	$(RM) $(NAME)
