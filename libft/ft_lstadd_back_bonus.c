@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 15:12:25 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/05 01:14:22 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/05 11:28:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*current;
-	
+
 	if (lst)
 	{
-		if (*lst) 
+		if (*lst)
 		{
 			current = ft_lstlast(*lst);
 			current->next = new;
 		}
-		else 
+		else
 		{
 			*lst = new;
 		}
