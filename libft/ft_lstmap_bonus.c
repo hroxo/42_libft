@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 15:12:25 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/05 01:14:22 by hroxo            ###   ########.fr       */
+/*   Created: 2025/09/05 00:25:45 by hroxo             #+#    #+#             */
+/*   Updated: 2025/09/05 01:10:47 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*current;
-	
-	if (lst)
+	t_list	*new;
+	t_list	*head;
+
+	if (!f || !del)
+		return (NULL);
+	head = NULL;
+	while (lst)
 	{
-		if (*lst) 
+		new = ft_lstnew(f(lst->content));
+		if (!new)
 		{
-			current = ft_lstlast(*lst);
-			current->next = new;
+			ft_lstclear(&head, *del);
+			free(head);
+			return (NULL);
 		}
-		else 
-		{
-			*lst = new;
-		}
+		ft_lstadd_back(&head, new);
+		lst = lst->next;
 	}
+	return (head);
 }

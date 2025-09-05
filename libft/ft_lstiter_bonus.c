@@ -6,12 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 18:48:16 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/04 19:21:46 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/05 00:20:35 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
-#include <stdlib.h>
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
@@ -27,37 +26,43 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	}
 }
 
-#include <stdio.h>
-
-void	add_one(int *a)
-{
-	(*a)++;
-}
-
+/*
+#include <stdio.h> //TODO remove me
+#include <stdlib.h>
+		   
 void	print_lst(t_list *lst)
 {
 	while (lst)
 	{
-		printf("%ld ", (long)lst->content);
+		printf("%d ", *(int *)lst->content);
 		lst = lst->next;
 	}
 	printf("\n");
 }
+
 void	add_wrapper(void *content)
 {
-	add_one((int *)content);
+	int *pcontent = (int *)content;
+	(*pcontent)++;
 }
 
 int main(int argc, char **argv)
 {
-	t_list	*list, *head, *next;
+	t_list	*list, *head;
 
-	head = list;
+	list = NULL;
 	for (int i = 1; i < argc; i++)
 	{
-		head = ft_lstnew((void *)(long)atoi(argv[i]));
-		next = head->next;
-		head = next;
+		int *val = malloc(sizeof(int *));
+		*val = atoi(argv[i]);
+		head = ft_lstnew(val);
+		if (!list)
+		{
+			list = head;
+		}
+		else {
+			ft_lstadd_back(&list, head);
+		}
 	}
 	printf("before func\n");
 	print_lst(list);
@@ -66,3 +71,4 @@ int main(int argc, char **argv)
 	print_lst(list);
 	return 0;
 }
+*/

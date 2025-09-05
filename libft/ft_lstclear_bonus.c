@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 21:49:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/04 18:53:37 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/05 00:43:46 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		return ;
 	while (head)
 	{
-		del(head->content);
 		next = head->next;
+		del(head->content);
 		free(head);
 		head = next;
 	}

@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/04 18:47:55 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/05 00:48:23 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,10 @@ SRCB =	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstdelone_bonus.c \
-	ft_lstclear_bonus.c
+	ft_lstclear_bonus.c \
+	ft_lstiter_bonus.c \
+	ft_lstmap_bonus.c \
+	ft_lstadd_back_bonus.c
 OBJB = $(SRCB:.c=.o)
 
 RM = rm -rf
