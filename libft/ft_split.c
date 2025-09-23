@@ -6,86 +6,82 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 19:32:46 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 23:30:12 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-static size_t	count_words(char const *s, char c)
+static int	count_words(char const *str, char c)
 {
-	size_t	i;
-	size_t	score;
-	int		flag;
+	int	n;
+	int	score;
+	int	is_word;
 
-	flag = 1;
-	i = 0;
+	is_word = 1;
 	score = 0;
-	while (s[i])
+	n = 0;
+	while (str[n])
 	{
-		if (s[i] == c)
-		{
-			flag = 1;
-		}
+		if (str[n] == c)
+			is_word = 1;
 		else
 		{
-			if (flag)
+			if (is_word == 1)
 				score++;
-			flag = 0;
+			is_word = 0;
 		}
-		i++;
+		n++;
 	}
 	return (score);
 }
 
-static char	*new_string(char *s, char c, size_t *pw)
+static char	*ft_strdup(char const *src, int size)
 {
-	char	*str;
-	size_t	j;
-	size_t	w;
+	char	*dest;
+	int		n;
 
-	w = *pw;
-	j = 0;
-	while (s[w + j] && s[w + j] != c)
-		j++;
-	str = malloc(sizeof(char) * ((int)j + 1));
-	if (!str)
-		return (NULL);
-	j = 0;
-	while (s[w] && s[w] != c)
-		str[j++] = s[w++];
-	str[j] = 0;
-	*pw = w;
-	return (str);
+	n = 0;
+	dest = malloc(size + 1);
+	if (dest == 0)
+		return (0);
+	while (src[n] && n < size)
+	{
+		dest[n] = src[n];
+		n++;
+	}
+	dest[n] = 0;
+	return (dest);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**strs;
-	size_t	i;
-	size_t	w;
+	int		n;
+	int		w;
+	char	**out;
+	int		i;
 
-	w = 0;
+	n = 0;
 	i = 0;
-	strs = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!strs)
+	out = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!out)
 		return (NULL);
-	while (s[w])
+	while (s[n])
 	{
-		strs[i] = new_string((char *)s, c, &w);
-		if (strs[i] == NULL)
-		{
-			free(strs);
-			return (NULL);
-		}
-		while (s[w] && s[w] == c)
+		w = 0;
+		while (s[n + w] != c && s[n + w])
 			w++;
-		i++;
+		if (w > 0)
+		{
+			out[i++] = ft_strdup(&s[n], w);
+			n += w;
+		}
+		else
+			n++;
 	}
-	strs[i] = 0;
-	return (strs);
+	out[i] = NULL;
+	return (out);
 }
-
 /*
 #include <stdio.h> //Todo remove
 
@@ -93,12 +89,14 @@ int main(int argc, char **argv)
 {
 	(void) argc;
 	char	**strs;
+	size_t i = 0;
 
 	strs = ft_split(argv[1], argv[2][0]);
-	for (int i = 0; i < 5; i++)
+	while (strs[i])
 	{
-		printf("%i string: %s\n\n", (i + 1), strs[i]);
+		printf("%i string: %s\n\n", (int)i, strs[i]);
 		free(strs[i]);
+		i++;
 	}
 	free(strs);
 }
