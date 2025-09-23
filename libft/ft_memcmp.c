@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 20:07:15 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 19:42:11 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 13:22:37 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
-	unsigned char	*p_s1;
-	unsigned char	*p_s2;
+	unsigned char	*ps1;
+	unsigned char	*ps2;
 
-	p_s1 = (unsigned char *)s1;
-	p_s2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
 	i = 0;
-	while ((p_s1[i] == p_s2[i] && (i < n)))
+	while (ps1[i] && ps2[i] && (ps1[i] == ps2[i]) && (i < n))
 		i++;
-	return (p_s1[i] - p_s2[i]);
+	return (ps1[i] - ps2[i]);
 }
 
 /*
@@ -31,10 +33,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 #include <string.h>
 int main()
 {
-	char	s2[23] = "HellO world!";
-	char	s1[23] = "Hello world!";
-	printf("Original\n\n%i\n", memcmp(s1, s2, 22));
-	printf("MEO\n\n%i\n", ft_memcmp(s1, s2, 22));
+	char	s2[4] = {0, 0, 42, 0};
+	char	s1[4] = {0, 0, 42, 0};
+
+	printf("Original\n\n%i\n", memcmp(s1, s2, 4));
+	printf("MEO\n\n%i\n", ft_memcmp(s1, s2, 4));
 	return (0);
 }
 */

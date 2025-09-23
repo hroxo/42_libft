@@ -6,17 +6,20 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:00:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 16:35:59 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 15:02:23 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 	int	last_c;
 
+	if (c == 0)
+		return ((char *)(s + ft_strlen(s)));
 	last_c = -1;
 	i = 0;
 	while (s[i])

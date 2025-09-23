@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 21:21:20 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 21:38:33 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 22:07:06 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 #include <string.h>
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main()
 {
-	(void) argc;
 
-	printf("meu\n\n%s\n", ft_strnstr(argv[1], argv[2], (size_t)atoi(argv[3])));
-	//printf("meu\n\n%s\n", strnstr(argv[1], argv[2], (size_t)atoi(argv[3])));
+	printf("meu\n\n%s\n", ft_strnstr("Ola como estas", "", -1));
 }
 */

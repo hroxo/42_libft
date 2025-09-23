@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 13:44:27 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 15:19:04 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 16:14:54 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 
 int	main()
 {
-	char	dst[40] = "Ola como ";
+	char	dst[10] = "Ola como ";
 	char	src[40] = "estas animal";
 	printf("==>Original<==\n");
-	int len = strlcat(dst, src, 25);
-	printf("output: %i\ndest: %s\n", len, dst);
-	char	dst1[12] = "Ola como ";
+	int len = strlcat(dst, src, 9);
+	printf("output: %i|\ndest: %s|\n", len, dst);
+	char	dst1[10] = "Ola como ";
 	char	src1[40] = "estas animal";
 	printf("==>Meu<==\n");
-	int len1 = ft_strlcat(dst1, src1, 25);
-	printf("output: %i\ndest: %s\n", len1, dst1);
+	int len1 = ft_strlcat(dst1, src1, 9);
+	printf("output: %i|\ndest: %s|\n", len1, dst1);
 	return (0);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:42:57 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 19:31:08 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 15:29:30 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (s1[i] && (s1[i] == s2[i]) && (i < n))
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && (s1[i] == s2[i]) && (i < n - 1))
 		i++;
 	return (s1[i] - s2[i]);
 }
@@ -27,13 +29,12 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 #include <string.h>
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main()
 {
-	(void) argc;
 	printf("==>Original<==\n%i\n\n",
-		strncmp(argv[1], argv[2], (size_t)atoi(argv[3])));
+		strncmp("12334", "1235", 6));
 	printf("==>MEO<==\n%i\n\n",
-		ft_strncmp(argv[1], argv[2], (size_t)atoi(argv[3])));
+		ft_strncmp("12334", "1235", 6));
 	return (0);
 }
 */

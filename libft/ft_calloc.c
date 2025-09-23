@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:11:57 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 11:32:16 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 22:11:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	out = malloc(nmemb * size);
 	if (!out)
 		return (NULL);
-	while (i < nmemb * size)
+	while (i < (nmemb * size))
 	{
 		*(unsigned char *)(out + i) = 0;
 		i++;
@@ -39,7 +39,8 @@ int main()
 
 	tab = calloc(3, sizeof(int));
 	for (int i = 0; i < 3; i++) 
-		printf("%c", tab[i]);
+		printf("%i", tab[i]);
+	free(tab);
 	return (0);
 }
 */

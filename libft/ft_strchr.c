@@ -6,21 +6,27 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 15:45:06 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 15:57:10 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/23 15:00:57 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	size_t	i;
+
+	i = 0;
+	if (c == 0)
+		return ((char *)(s + ft_strlen(s)));
+	while (s[i])
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)&s[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }
 
 /*
@@ -31,9 +37,9 @@ int main()
 {
 	char word[40] = "Ola tudo bem?";
 	printf("==>O meu<==\n");
-	printf("output: %s\n\n", ft_strchr(word, ' '));
+	printf("%s\n\n", ft_strchr(word, 'z'));
 	printf("==>O original<==\n");
-	printf("output: %s\n\n", strchr(word, ' '));
+	printf("%s\n\n", ft_strchr(word, 'z'));
 	return 0;
 }
 */
