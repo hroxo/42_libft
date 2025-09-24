@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 23:41:35 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 11:28:35 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/24 20:08:41 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	size_t				i;
 	const unsigned char	*pstr;
 	unsigned char		*pdest;
-
-	if (!dest)
+	
+	if (!dest || !src)
 		return (NULL);
 	pstr = (const unsigned char *)src;
 	pdest = (unsigned char *)dest;
