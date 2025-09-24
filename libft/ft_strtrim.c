@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:22:05 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/24 23:04:58 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/24 23:24:39 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static size_t	real_len(char const *s1, char const *set)
 	i = 0;
 	while (s1[i] && isset(s1[i], set) == 1)
 		i++;
-	len = ft_strlen(s1) - 1;
+	len = ft_strlen(s1);
 	while (len > i && (isset(s1[len], set) == 1))
-		len--;
+		--len;
 	return (len - i);
 }
 
@@ -60,7 +60,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		while (s1[i] && isset(s1[i], set) == 1)
 			i++;
-		while (w < len + 1)
+		while (w < len)
 			trimmedstr[w++] = s1[i++];
 	}
 	trimmedstr[w] = 0;

@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/05 00:48:23 by hroxo            ###   ########.fr        #
+#    Updated: 2025/09/24 23:25:41 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,11 +80,7 @@ fclean: clean
 
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)
-
 bonus: $(OBJB)
 	ar rcs $(NAME) $(OBJB)
 
-.PHONY: all clean fclean re bonus so
+.PHONY: all clean fclean re bonus
