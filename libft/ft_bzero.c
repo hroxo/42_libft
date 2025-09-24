@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 14:48:08 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 11:33:28 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/24 19:59:42 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return ;
 	while (i < n)
 	{
 		*(unsigned char *)(s + i) = 0;
@@ -31,19 +29,20 @@ void	ft_bzero(void *s, size_t n)
 #include <string.h>
 int main(void)
 {
-	char	word[13] = "Ola tudo bem";
+	char	*word = NULL;
 
-	bzero((void *)word, 3);
-	printf("====> ORIGINAL <====\n");
-	printf("after bzero\n");
+	ft_bzero(word, 3);
+	printf("====> MINE <====\n");
+	printf("after ft_bzero\n");
 	printf("%s", word);
 	printf("ascii values:\n");
 	for (int i = 0; i < 15; i++)
 	{
 		printf("%i character:\nascii value: %i\n", i, word[i]);
 	}
-	printf("====> MINE <====\n");
-	printf("after ft_bzero\n");
+	bzero((void *)word, 3);
+	printf("====> ORIGINAL <====\n");
+	printf("after bzero\n");
 	printf("%s", word);
 	printf("ascii values:\n");
 	for (int i = 0; i < 15; i++)
