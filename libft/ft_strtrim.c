@@ -6,11 +6,12 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:22:05 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 17:56:28 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/24 23:04:58 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
 static int	isset(char s, char const *set)
 {
@@ -29,17 +30,16 @@ static int	isset(char s, char const *set)
 static size_t	real_len(char const *s1, char const *set)
 {
 	size_t	len;
-	size_t	rep;
+	size_t	i;
 
 	len = 0;
-	rep = 0;
-	while (s1[len])
-	{
-		if (isset(s1[len], set))
-			rep++;
-		len++;
-	}
-	return (len - rep);
+	i = 0;
+	while (s1[i] && isset(s1[i], set) == 1)
+		i++;
+	len = ft_strlen(s1) - 1;
+	while (len > i && (isset(s1[len], set) == 1))
+		len--;
+	return (len - i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
@@ -55,14 +55,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmedstr = malloc(sizeof(char) * (len + 1));
 	if (!trimmedstr)
 		return (NULL);
-	while (s1[i])
+	
+	if (len > 0)
 	{
-		if (!isset(s1[i], set))
-		{
-			trimmedstr[w] = s1[i];
-			w++;
-		}
-		i++;
+		while (s1[i] && isset(s1[i], set) == 1)
+			i++;
+		while (w < len + 1)
+			trimmedstr[w++] = s1[i++];
 	}
 	trimmedstr[w] = 0;
 	return (trimmedstr);
@@ -71,10 +70,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 /*
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main()
 {
-	(void) argc;
-	printf("trimmed\n%s\n", ft_strtrim(argv[1], argv[2]));
+	char *s1 = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ";
+	char *s2 = "Hello \t  Please\n Trim me !";
+	char	*s3 = ft_strtrim(s1, " \n\t");
+	printf("OBJETIVO\n|%s|\n\n", s2);
+	printf("RELAIDADE\n|%s|\ntamanho: %i\n", s3, (int)ft_strlen(s3));
+	free(s3);
 	return (0);
 }
 */
