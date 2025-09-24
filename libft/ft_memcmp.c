@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 20:07:15 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 13:22:37 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/09/24 17:52:51 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	ps1 = (unsigned char *)s1;
 	ps2 = (unsigned char *)s2;
 	i = 0;
-	while (ps1[i] && ps2[i] && (ps1[i] == ps2[i]) && (i < n))
+	while ((ps1[i] == ps2[i]) && (i < n + 1))
 		i++;
 	return (ps1[i] - ps2[i]);
 }
 
-/*
+
 #include <stdio.h>
 #include <string.h>
 int main()
@@ -40,4 +40,4 @@ int main()
 	printf("MEO\n\n%i\n", ft_memcmp(s1, s2, 4));
 	return (0);
 }
-*/
+
