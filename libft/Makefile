@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/09/05 00:48:23 by hroxo            ###   ########.fr        #
+#    Updated: 2025/10/09 16:48:48 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,8 @@ SRC =	ft_isalpha.c \
 	ft_putnbr_fd.c
 OBJ = $(SRC:.c=.o)
 
-SRCB =	ft_lstnew_bonus.c \
+SRCB =	$(SRC) \
+	ft_lstnew_bonus.c \
 	ft_lstadd_front_bonus.c \
 	ft_lstlast_bonus.c \
 	ft_lstsize_bonus.c \
@@ -79,8 +80,12 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+	rm .bonus
 
-bonus: $(OBJB)
+bonus: .bonus
+
+.bonus: $(OBJB)
+	@touch .bonus
 	ar rcs $(NAME) $(OBJB)
 
 .PHONY: all clean fclean re bonus

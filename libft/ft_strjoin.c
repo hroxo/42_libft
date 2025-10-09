@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:48:59 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 16:16:42 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 17:43:09 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	str_joined = malloc(sizeof(char) * (istotal_len + 1));
 	if (!str_joined)
 		return (NULL);
-	str_joined = ft_strdup(s1);
+	if (s1)
+		str_joined = ft_strdup(s1);
 	while (i < islen_s2)
 	{
 		str_joined[islen_s1 + i] = s2[i];
 		i++;
 	}
-	str_joined[istotal_len] = 0;
+	str_joined[islen_s1 + 1] = 0;
 	return (str_joined);
 }
 

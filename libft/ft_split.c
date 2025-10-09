@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 23:30:12 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 16:27:17 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	**ft_split(char const *s, char c)
 	out[i] = NULL;
 	return (out);
 }
-/*
+#ifdef CRAZY_WORD
 #include <stdio.h> //Todo remove
 
 int main(int argc, char **argv)
@@ -100,4 +100,4 @@ int main(int argc, char **argv)
 	}
 	free(strs);
 }
-*/
+#endif

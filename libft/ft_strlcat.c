@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 13:44:27 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 16:14:54 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 17:12:04 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 	i = 0;
 	d_len = ft_strlen(dst);
 	s_len = ft_strlen(src);
-	if (dsize < d_len)
-		return (s_len + dsize);
+	if (dsize <= d_len)
+		return (dsize + s_len);
 	while (src[i] && (i + d_len) < dsize - 1)
 	{
 		dst[d_len + i] = src[i];

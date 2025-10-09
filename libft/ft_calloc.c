@@ -6,41 +6,38 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:11:57 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 22:11:49 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 18:12:20 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdint.h>
 #include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*out;
 	size_t	i;
 
-	i = 0;
-	if (nmemb * size > 2147483647)
-		return (NULL);
-	out = malloc(nmemb * size);
+	i = nmemb * size;
+	out = malloc(i);
 	if (!out)
 		return (NULL);
-	while (i < (nmemb * size))
-	{
-		*(unsigned char *)(out + i) = 0;
-		i++;
-	}
+	ft_bzero(out, i);
 	return (out);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *tab;
-
-	tab = calloc(3, sizeof(int));
-	for (int i = 0; i < 3; i++) 
-		printf("%i", tab[i]);
-	free(tab);
-	return (0);
-}
-*/
+//
+// #include <stdio.h>
+//
+// int main()
+// {
+// 	char *tab;
+//
+// 	tab = calloc(SIZE_MAX, SIZE_MAX);
+// 	// for (int i = 0; i < 3; i++) 
+// 	// if (tab)
+// 	// 	free(tab);
+// 	printf("%i", tab[0]);
+// 	return (0);
+// }
+//

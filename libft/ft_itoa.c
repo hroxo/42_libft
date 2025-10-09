@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 19:48:43 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 23:40:36 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 18:26:22 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static int	nbr_len(int n)
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n /= 10;
@@ -57,16 +59,15 @@ char	*ft_itoa(int n)
 	}
 	return (nbr);
 }
-/*
-#include <stdio.h> // Todo delete me
-#include <limits.h>
-int	main()
-{
-	int	nbr = INT_MIN;
-
-	char	*s = ft_itoa(nbr);
-	printf("%i\n%s\n", nbr_len(nbr),s);
-	free(s);
-	return (0);
-}
-*/
+//
+// #include <stdio.h> // Todo delete me
+// #include <limits.h>
+// int	main()
+// {
+//
+// 	char	*s = ft_itoa(0);
+// 	printf("%i\n%s\n", nbr_len(0), s);
+// 	free(s);
+// 	return (0);
+// }
+//
