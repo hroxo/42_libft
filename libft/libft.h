@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:31:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/02 00:12:52 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:41:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);

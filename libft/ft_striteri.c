@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 21:15:15 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 21:23:36 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:46:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

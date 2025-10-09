@@ -6,11 +6,10 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 16:00:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 15:02:23 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:43:45 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)

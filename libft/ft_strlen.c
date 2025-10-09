@@ -6,10 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 21:47:03 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/26 22:00:26 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:46:20 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
+
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

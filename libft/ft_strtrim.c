@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:22:05 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 17:56:28 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:45:01 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	isset(char s, char const *set)
 {

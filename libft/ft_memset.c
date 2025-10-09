@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 22:09:38 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 19:40:15 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:47:13 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

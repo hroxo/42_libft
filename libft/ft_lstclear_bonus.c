@@ -6,12 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 21:49:51 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/05 00:43:46 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:43:22 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft_bonus.h"
-#include <stdlib.h>
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

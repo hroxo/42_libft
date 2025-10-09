@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 19:33:56 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/28 19:51:03 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:45:57 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

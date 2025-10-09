@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 00:11:09 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/05 00:45:52 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:41:15 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_BONUS_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_list
 {

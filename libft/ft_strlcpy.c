@@ -6,11 +6,10 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 11:56:49 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 15:42:58 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:45:27 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dsize)

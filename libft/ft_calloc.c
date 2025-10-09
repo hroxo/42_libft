@@ -6,12 +6,10 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:11:57 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 18:12:20 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:39:49 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
-#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)

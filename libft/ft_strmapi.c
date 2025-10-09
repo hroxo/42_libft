@@ -6,11 +6,10 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 20:52:43 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 21:13:31 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:46:33 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))

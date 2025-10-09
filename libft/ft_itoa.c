@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 19:48:43 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 18:26:22 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:42:08 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	nbr_len(int n)
 {

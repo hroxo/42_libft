@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	count_words(char const *str, char c)
 {
@@ -36,7 +36,7 @@ static int	count_words(char const *str, char c)
 	return (score);
 }
 
-static char	*ft_strdup(char const *src, int size)
+static char	*ft_strndup(char const *src, int size)
 {
 	char	*dest;
 	int		n;
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 			w++;
 		if (w > 0)
 		{
-			out[i++] = ft_strdup(&s[n], w);
+			out[i++] = ft_strndup(&s[n], w);
 			n += w;
 		}
 		else
@@ -82,22 +82,21 @@ char	**ft_split(char const *s, char c)
 	out[i] = NULL;
 	return (out);
 }
-#ifdef CRAZY_WORD
-#include <stdio.h> //Todo remove
-
-int main(int argc, char **argv)
-{
-	(void) argc;
-	char	**strs;
-	size_t i = 0;
-
-	strs = ft_split(argv[1], argv[2][0]);
-	while (strs[i])
-	{
-		printf("%i string: %s\n\n", (int)i, strs[i]);
-		free(strs[i]);
-		i++;
-	}
-	free(strs);
-}
-#endif
+// #include <stdio.h> //Todo remove
+//
+// int main(int argc, char **argv)
+// {
+// 	(void) argc;
+// 	char	**strs;
+// 	size_t i = 0;
+//
+// 	strs = ft_split(argv[1], argv[2][0]);
+// 	while (strs[i])
+// 	{
+// 		printf("%i string: %s\n\n", (int)i, strs[i]);
+// 		free(strs[i]);
+// 		i++;
+// 	}
+// 	free(strs);
+// }
+// #endif

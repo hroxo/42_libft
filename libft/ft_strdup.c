@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 11:35:06 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 12:03:43 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:45:40 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s)
 {
