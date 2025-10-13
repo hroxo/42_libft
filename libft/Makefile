@@ -6,7 +6,7 @@
 #    By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/26 18:47:29 by hroxo             #+#    #+#              #
-#    Updated: 2025/10/09 16:48:48 by hroxo            ###   ########.fr        #
+#    Updated: 2025/10/13 18:39:49 by hroxo            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-	rm .bonus
+	rm -f .bonus
 
 bonus: .bonus
 
