@@ -6,11 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 21:21:20 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/23 22:07:06 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:47:55 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (!needle)
+	if (!needle[0])
 		return ((char *)haystack);
 	while (haystack[i] && i < len)
 	{

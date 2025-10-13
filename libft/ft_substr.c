@@ -6,48 +6,36 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 12:41:36 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 14:36:52 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:19:16 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	size_t	str_len;
 	char	*out;
-	size_t	i;
-	size_t	j;
 
-	j = 0;
-	i = 0;
+	str_len = ft_strlen(s);
+	if (start > str_len)
+		return (ft_strdup(""));
+	else if (start + len > str_len)
+		len = str_len - start;
 	out = malloc(len + 1);
 	if (!out)
 		return (NULL);
-	while (s[i])
-	{
-		if (i == start)
-		{
-			while (j < len)
-			{
-				out[j] = s[i + j];
-				j++;
-			}
-			break ;
-		}
-		i++;
-	}
-	out[j] = 0;
+	ft_strlcpy(out, s + start, len + 1);
 	return (out);
 }
-
-/*
-#include <stdio.h>
-
-int main(int argc, char **argv)
-{
-	(void) argc;
-	printf("output string\n%s",
-		ft_substr(argv[1], atoi(argv[2]), (size_t)atoi(argv[3])));
-	return (0);
-}
-*/
+// #include <stdio.h>
+//
+// int main(int argc, char **argv)
+// {
+// 	(void) argc;
+// 	char *str = ft_substr(argv[1], atoi(argv[2]), (size_t)atoi(argv[3]));
+// 	printf("output string\n%s", str);
+// 	free(str);
+// 	return (0);
+// }
+//

@@ -6,36 +6,39 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 15:48:59 by hroxo             #+#    #+#             */
-/*   Updated: 2025/08/29 16:16:42 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:33:25 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	islen_s1;
-	size_t	islen_s2;
-	size_t	istotal_len;
+	char	*big_str;
 	size_t	i;
-	char	*str_joined;
+	size_t	len1;
+	size_t	len2;
 
+	if (!s1[0] && !s2[0])
+		return (ft_strdup(""));
 	i = 0;
-	islen_s1 = ft_strlen(s1);
-	islen_s2 = ft_strlen(s2);
-	istotal_len = islen_s1 + islen_s2;
-	str_joined = malloc(sizeof(char) * (istotal_len + 1));
-	if (!str_joined)
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	big_str = malloc((len1 + len2 + 1) * sizeof(char));
+	if (!big_str)
 		return (NULL);
-	str_joined = ft_strdup(s1);
-	while (i < islen_s2)
+	while (i < len1)
 	{
-		str_joined[islen_s1 + i] = s2[i];
+		big_str[i] = s1[i];
 		i++;
 	}
-	str_joined[istotal_len] = 0;
-	return (str_joined);
+	while (i < len1 + len2)
+	{
+		big_str[i] = s2[i - len1];
+		i++;
+	}
+	big_str[i] = 0;
+	return (big_str);
 }
 
 /*

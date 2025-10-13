@@ -6,12 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 00:25:45 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/05 01:10:47 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:59:31 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_bonus.h"
-#include <stdlib.h>
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

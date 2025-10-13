@@ -6,12 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 23:50:10 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/02 00:14:49 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:59:39 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft_bonus.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {

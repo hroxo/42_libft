@@ -6,13 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 22:38:44 by hroxo             #+#    #+#             */
-/*   Updated: 2025/09/01 23:25:55 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/09 21:43:10 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
-#include <fcntl.h>
 
 void	ft_putendl_fd(char *s, int fd)
 {

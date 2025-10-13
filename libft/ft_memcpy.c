@@ -6,11 +6,15 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 23:41:35 by hroxo             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/09/24 20:08:41 by hroxo            ###   ########.fr       */
+=======
+/*   Updated: 2025/10/09 21:47:24 by hroxo            ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

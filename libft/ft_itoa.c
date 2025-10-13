@@ -6,17 +6,23 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 19:48:43 by hroxo             #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2025/09/24 22:23:30 by hroxo            ###   ########.fr       */
+=======
+/*   Updated: 2025/10/09 21:42:08 by hroxo            ###   ########.fr       */
+>>>>>>> main
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static int	nbr_len(int n)
 {
 	int	len;
 
 	len = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n /= 10;
@@ -59,6 +65,7 @@ char	*ft_itoa(int n)
 	}
 	return (nbr);
 }
+<<<<<<< HEAD
 /*
 #include <stdio.h> // Todo delete me
 #include <limits.h>
@@ -72,3 +79,17 @@ int	main()
 	return (0);
 }
 */
+=======
+//
+// #include <stdio.h> // Todo delete me
+// #include <limits.h>
+// int	main()
+// {
+//
+// 	char	*s = ft_itoa(0);
+// 	printf("%i\n%s\n", nbr_len(0), s);
+// 	free(s);
+// 	return (0);
+// }
+//
+>>>>>>> main
