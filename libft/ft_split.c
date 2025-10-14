@@ -6,12 +6,11 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/14 15:01:42 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/14 18:25:47 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	count_words(char const *str, char c)
 {
@@ -47,7 +46,14 @@ static int	get_len(char *str, char c)
 	return (w);
 }
 
-static char	*ft_strndup(char const *src, char c)
+static void	free_strs(char **strs, int index)
+{
+	while (index > 0)
+		free(strs[index--]);
+	free(strs);
+}
+
+static char	*ft_strndup(char const *src, char c, int index, char **strs)
 {
 	char	*dest;
 	int		n;
@@ -56,8 +62,11 @@ static char	*ft_strndup(char const *src, char c)
 	size = get_len((char *)src, c);
 	n = 0;
 	dest = malloc(size + 1);
-	if (dest == 0)
+	if (!dest)
+	{
+		free_strs(strs, index);
 		return (0);
+	}
 	while (src[n] && n < size)
 	{
 		dest[n] = src[n];
@@ -65,12 +74,6 @@ static char	*ft_strndup(char const *src, char c)
 	}
 	dest[n] = 0;
 	return (dest);
-}
-static void	free_strs(char **strs, int index)
-{
-	while (index > 0)
-		free(strs[index--]);
-	free(strs);
 }
 
 char	**ft_split(char const *s, char c)
@@ -88,13 +91,11 @@ char	**ft_split(char const *s, char c)
 	{
 		if (get_len((char *)&s[n], c) > 0)
 		{
-			out[i++] = ft_strndup(&s[n], c);
-			if (!out[i - 1])
-			{
-				free_strs(out, i - 1);
+			out[i] = ft_strndup(&s[n], c, i, out);
+			if (!out[i])
 				return (NULL);
-			}
 			n += get_len((char *)&s[n], c);
+			i++;
 		}
 		else
 			n++;
