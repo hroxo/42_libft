@@ -6,11 +6,12 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 16:27:17 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/14 15:01:42 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	count_words(char const *str, char c)
 {
@@ -36,11 +37,23 @@ static int	count_words(char const *str, char c)
 	return (score);
 }
 
-static char	*ft_strndup(char const *src, int size)
+static int	get_len(char *str, char c)
+{
+	int	w;
+
+	w = 0;
+	while (str[w] != c && str[w])
+		w++;
+	return (w);
+}
+
+static char	*ft_strndup(char const *src, char c)
 {
 	char	*dest;
 	int		n;
+	int		size;
 
+	size = get_len((char *)src, c);
 	n = 0;
 	dest = malloc(size + 1);
 	if (dest == 0)
@@ -53,11 +66,16 @@ static char	*ft_strndup(char const *src, int size)
 	dest[n] = 0;
 	return (dest);
 }
+static void	free_strs(char **strs, int index)
+{
+	while (index > 0)
+		free(strs[index--]);
+	free(strs);
+}
 
 char	**ft_split(char const *s, char c)
 {
 	int		n;
-	int		w;
 	char	**out;
 	int		i;
 
@@ -68,13 +86,15 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	while (s[n])
 	{
-		w = 0;
-		while (s[n + w] != c && s[n + w])
-			w++;
-		if (w > 0)
+		if (get_len((char *)&s[n], c) > 0)
 		{
-			out[i++] = ft_strndup(&s[n], w);
-			n += w;
+			out[i++] = ft_strndup(&s[n], c);
+			if (!out[i - 1])
+			{
+				free_strs(out, i - 1);
+				return (NULL);
+			}
+			n += get_len((char *)&s[n], c);
 		}
 		else
 			n++;
