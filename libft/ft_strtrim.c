@@ -6,66 +6,28 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 16:22:05 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 21:45:01 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 13:35:39 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	isset(char s, char const *set)
-{
-	size_t	j;
-
-	j = 0;
-	while (set[j])
-	{
-		if (s == set[j])
-			return (1);
-		j++;
-	}
-	return (0);
-}
-
-static size_t	real_len(char const *s1, char const *set)
-{
-	size_t	len;
-	size_t	rep;
-
-	len = 0;
-	rep = 0;
-	while (s1[len])
-	{
-		if (isset(s1[len], set))
-			rep++;
-		len++;
-	}
-	return (len - rep);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t		len;
-	size_t		i;
-	size_t		w;
-	char		*trimmedstr;
+	size_t	i;
+	size_t	j;
+	char	*trimmed;
 
 	i = 0;
-	w = 0;
-	len = real_len(s1, set);
-	trimmedstr = malloc(sizeof(char) * (len + 1));
-	if (!trimmedstr)
+	j = ft_strlen(s1);
+	if (!s1 || !set)
 		return (NULL);
-	while (s1[i])
-	{
-		if (!isset(s1[i], set))
-		{
-			trimmedstr[w] = s1[i];
-			w++;
-		}
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
-	}
-	trimmedstr[w] = 0;
-	return (trimmedstr);
+	while (j > i && ft_strchr(set, s1[j - 1]))
+		j--;
+	trimmed = ft_substr(s1, i, j - i);
+	return (trimmed);
 }
 
 /*
