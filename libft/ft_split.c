@@ -64,7 +64,7 @@ static char	*ft_strndup(char const *src, char c, int index, char **strs)
 	dest = malloc(size + 1);
 	if (!dest)
 	{
-		free_strs(strs, index);
+		free_strs(strs, index - 1);
 		return (0);
 	}
 	while (src[n] && n < size)
