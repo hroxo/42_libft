@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/27 14:48:08 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 21:39:40 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 19:05:44 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return ;
 	while (i < n)
 	{
 		*(unsigned char *)(s + i) = 0;

@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 00:01:59 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 21:44:07 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 19:21:45 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,11 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dest || !src)
-		return (NULL);
 	i = 0;
+	if (!dest && !src)
+		return (NULL);
 	if (dest < src)
-	{
-		while (i < n)
-		{
-			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
-			i++;
-		}
-	}
+		dest = ft_memcpy(dest, src, n);
 	else
 	{
 		i = n;

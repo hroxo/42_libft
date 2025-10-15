@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 19:33:56 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 21:45:57 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 19:09:38 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	size_t	i;
 
 	i = 0;
-	while ((i < n) && (s + i))
+	while (i < n)
 	{
-		if (*(unsigned char *)(s + i) == (char)c)
+		if (*(unsigned char *)(s + i) == (unsigned char)c)
 			return ((void *)(s + i));
 		i++;
 	}

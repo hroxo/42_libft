@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/29 17:57:07 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/14 18:25:47 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 19:39:00 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	get_len(char *str, char c)
 
 static void	free_strs(char **strs, int index)
 {
-	while (index > 0)
+	while (index >= 0)
 		free(strs[index--]);
 	free(strs);
 }

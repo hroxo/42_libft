@@ -6,7 +6,7 @@
 /*   By: hroxo <hroxo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 23:50:10 by hroxo             #+#    #+#             */
-/*   Updated: 2025/10/09 21:59:39 by hroxo            ###   ########.fr       */
+/*   Updated: 2025/10/15 19:18:45 by hroxo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new_node;
 
 	new_node = malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
 	new_node->next = NULL;
 	new_node->content = content;
 	return (new_node);
